@@ -1,104 +1,225 @@
+/***** STARTER CODE - DO NOT CHANGE *****/
+
+html{
+  scroll-behavior: smooth;
+}
+
 body{
-    font-family: 'Verdana', 'Times New Roman';
-    background-color: #000000;
-    color: #FFFFFF;
-    margin: 25px 25px 0px 25px;
+  background-color: #737373;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
 }
 
 h1{
-    font-size: 48px;
-    text-align: center;
-    padding: 15px;
+  font-size: 50px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+  color:white;
 }
 
 h2{
-    font-size: 32px;
-    text-shadow: 2px 4px #808080;
+  font-size: 32px;
+  line-height: 1.5;
 }
 
-p{
-    font-size: 24px;
-    padding: 0px 0px 15px 15px;
+nav{
+  background-color: #ddd;
+  padding: 25px 10px;;    
+  text-align: left;   
 }
 
-img{
-    width: 350px;
-    display: block;
-    margin: auto;
-    /* margin-left: auto;
-    margin-right: auto; */
-    border-color: #FFFFFF;
-    border-style: dashed;
-    border-width: 10px;
+nav a{
+  color: black;
+  font-weight: bold;
 }
 
-div{
-    min-height: 100px;
-    padding: 20px;
-    border-color: #FFFFFF;
-    border-style: solid;
-    border: 3px solid #FFFFFF;
+nav ul{
+  list-style-type: none;
 }
 
-.intro{
-    border-radius: 15px;
-    margin-top: 15px;
+nav li{
+  display: inline;
+  margin-right: 5%;
+
 }
 
-.red{
-    background-color: #FF0000;
-    text-align: right;
-    margin-left: 50px;
-    border-left: 10px solid #FFFFFF;
-    border-top: none;
-    border-right: none;
+header p{
+  color: white;
+  font-size: 24px;
+  padding: 0 100px;
+  text-align: center;
 }
 
-.blue{
-    background-color: #0000FF;
-    text-align: left;
-    margin-right: 50px;
-    border-right: 10px solid #FFFFFF;
-    border-top: none;
-    border-left: none;
-}
-
-.yellow{
-    background-color: #FFFF00;
-    text-align: right;
-    margin-left: 50px;
-    border-left: 10px solid #FFFFFF;
-    border-top: none;
-    border-right: none;
-    color: #000000;
-}
-
-.yellow h2{
-    text-shadow: 2px 4px #c7e2c7;
-}
-
-.green{
-    background-color: #008500;
-    text-align: left;
-    margin-right: 50px;
-    border-right: 10px solid #FFFFFF;
-    border-top: none;
-    border-left: none;
-}
-
-span{
-    text-decoration: underline;
-    text-transform: uppercase;
-    text-shadow: none;
+.text{
+  background-color: rgba(255, 255, 255, .8);
+  border: 10px solid black;
+  padding: 30px;
 }
 
 footer{
-    background: linear-gradient(90deg, #000000 0%, #0000ff 25%, #0066ff 70%, #000000 100%)
+  background-color: black;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
 }
 
-footer p{
-    font-size: 20px;
-    text-align: center;
-    padding: 10px 10px 10px 0px;
+footer a,
+footer a:visited{
+  color: white;
+}
+/*****  End Starter Code ****/
+
+/* Requirement 1 code here*/
+nav a{
+  text-decoration: none;
 }
 
+
+/* Requirement 2 code here*/
+nav a:hover{
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+
+
+a.skip{
+  background: white;
+  padding: 6px;
+  -webkit-transition: top 1s ease-out;
+  transition: left 1s ease-out;
+  z-index: 1;
+  /* Requirement 3 code here*/
+  position: absolute;
+  left: -500px;
+}
+
+
+/* Requirement 4 code here*/
+nav a:focus{
+  outline: none;
+  border-top: 2px solid yellow;
+}
+
+
+.container{
+  /* Requirement 5 code here*/
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  row-gap: 30px;
+}
+
+/* Requirements 6-10 here: */
+.intro{
+  background: url("../images/header.jpg");
+  background-color: #DDDDDD;
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about, .clients, .method, .contact{
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+img{
+  width: 100%;
+}
+
+.about-image, .clients-image, .method-image, .contact-image{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.about, .about-image{
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.clients, .clients-image{
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.method, .method-image{
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.contact, .contact-image{
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+.text{
+  align-self: center;
+  max-height: 25vh;
+  overflow: scroll;
+}
+
+
+@media screen and (min-width: 700px){
+  nav{
+    padding-top: 35px;
+    /*Requirement 11*/
+    text-align: right;
+  }
+
+  nav li{
+    margin-left: 5%;
+    margin-right:0;
+  }
+
+  
+  /* Requirements 12-15 here: */
+  a.skip:focus{
+    left: 0;
+    top: 20px;
+  }
+
+  .container{
+    display: grid;
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: repeat(4, 300px);
+  }
+
+  .about, .method, .clients-image, .contact-image{
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+
+  .clients, .contact, .about-image, .method-image{
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+
+}
+
+
+/** Code for prefers reduced motion **/
+/* Make no changes below this line.
+   *************************************** 
+   */
+@media screen and (prefers-reduced-motion: reduce){
+  /*Turn off scroll*/
+  html{
+    scroll-behavior: auto; /* Removes scroll animation */
+  }
+
+  /*Turn off transition*/
+  a.skip {
+    -webkit-transition: initial; /* sets to default setting */
+    transition: initial; /* sets to default setting */
+  }
+
+  /*Turn off parallax*/
+  .intro{
+    background-attachment: initial;
+  }
+}
